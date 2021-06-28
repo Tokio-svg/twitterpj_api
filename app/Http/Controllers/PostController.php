@@ -16,11 +16,15 @@ class PostController extends Controller
      */
     public function index()
     {
-        $items = Post::orderBy('id', 'desc')->get();
-        $goods = Good::all();
+        // $items = Post::orderBy('id', 'desc')->get();
+        // $goods = Good::all();
+        // return response()->json([
+        //     'data' => $items,
+        //     'goods' => $goods
+        // ], 200);
+        $items = Post::with('goods')->orderBy('id', 'desc')->get();
         return response()->json([
             'data' => $items,
-            'goods' => $goods
         ], 200);
     }
 
