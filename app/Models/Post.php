@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-// use Carbon\Carbon;
+use Carbon\Carbon;
 
 class Post extends Model
 {
@@ -23,13 +23,8 @@ class Post extends Model
     }
 
     // レコード取得時のcreated_atのフォーマット指定
-    // public function getCreatedAtAttribute($date)
-    // {
-    //     // return Carbon::createFromFormat('Y-m-d H:i:s', $date)->created_at;
-    //     return Carbon::parse($date)->format("Y/m/d H:i:s");
-    // }
-    // public function getUpdatedAtAttribute($date)
-    // {
-    //     return Carbon::createFromFormat('Y-m-d H:i:s', $date)->timestamps;
-    // }
+    public function getCreatedAtAttribute($date)
+    {
+        return date('Y-m-d H:i:s', strtotime($date));
+    }
 }
