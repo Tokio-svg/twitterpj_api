@@ -12,16 +12,6 @@ class Post extends Model
 
     protected $guarded = array('id');
 
-    // リレーション設定
-    public function comments()
-    {
-        return $this->hasMany('App\Models\Comment');
-    }
-    public function goods()
-    {
-        return $this->hasMany('App\Models\Good');
-    }
-
     // レコード取得時のcreated_atのフォーマット指定
     public function getCreatedAtAttribute($date)
     {

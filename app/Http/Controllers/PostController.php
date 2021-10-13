@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
-use App\Models\Comment;
-use App\Models\Good;
 
 class PostController extends Controller
 {
@@ -16,13 +14,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        // $items = Post::orderBy('id', 'desc')->get();
-        // $goods = Good::all();
-        // return response()->json([
-        //     'data' => $items,
-        //     'goods' => $goods
-        // ], 200);
-        $items = Post::with('goods')->orderBy('id', 'desc')->get();
+        $items = Post::all();
         return response()->json([
             'data' => $items,
         ], 200);
@@ -51,14 +43,10 @@ class PostController extends Controller
     public function show(Post $post)
     {
         $item = Post::find($post);
-        $comments = Comment::where('post_id', $post->id)->get();
-        $goods = Good::where('post_id', $post->id)->get();
 
         if ($item) {
             return response()->json([
                 'data' => $item,
-                'comments' => $comments,
-                'goods' => $goods
             ], 200);
         } else {
             return response()->json([
