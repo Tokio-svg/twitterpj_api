@@ -1,0 +1,62 @@
+/* 共通 */
+main {
+  width: 50%;
+  min-width: 1000px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 24px;
+  text-align: center;
+  margin: 50px 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.center {
+  text-align: center;
+}
+
+.error {
+  color: red;
+}
+
+.green {
+  color: green;
+}
+
+/* コメント投稿画面 */
+.form_wrap {
+  width: fit-content;
+  margin: 0 auto 30px;
+}
+input,textarea {
+  width: 500px;
+  border: 2px solid rgb(204, 204, 204);
+  border-radius: 5px;
+  padding: 3px 6px;
+  margin: 10px auto;
+}
+
+textarea {
+  height: 100px;
+  resize: none;
+}
+
+.post_submit {
+  background: rgb(0, 0, 0);
+  color: white;
+  border: none;
+  width: 300px;
+  padding: 5px 50px;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.post_submit:hover {
+  color: black;
+  background: rgb(194, 194, 194);
+}
