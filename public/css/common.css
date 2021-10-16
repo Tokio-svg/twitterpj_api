@@ -3,6 +3,7 @@ main {
   width: 50%;
   min-width: 1000px;
   margin: 0 auto;
+  line-height: 1.4em;
 }
 
 h1 {
@@ -59,4 +60,20 @@ textarea {
 .post_submit:hover {
   color: black;
   background: rgb(194, 194, 194);
+}
+
+/* コメント管理画面 */
+.w-5 {
+  width: 20px;
+  height: 20px;
+}
+
+table {
+  text-align: left;
+}
+
+th,td {
+  max-width: 600px;
+  padding: 5px 10px;
+  border-bottom: 1px solid rgb(182, 182, 182);
 }

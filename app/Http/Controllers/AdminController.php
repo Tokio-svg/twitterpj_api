@@ -39,4 +39,26 @@ class AdminController extends Controller
             'message' => $message,
         ]);
     }
+
+    // コメント管理画面表示
+    public function admin(Request $request)
+    {
+        // レコード取得
+        $items = Post::orderBy('created_at','desc')->paginate(10,['id','content','created_at']);
+
+        return view('admin', [
+            'items' => $items,
+        ]);
+    }
+
+    // コメント削除
+    public function delete(Request $request)
+    {
+        // レコード削除
+        Post::where('id', $request->delete_id)->delete();
+
+        $url = $request->url;
+
+        return redirect($url);
+    }
 }

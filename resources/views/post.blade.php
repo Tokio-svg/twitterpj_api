@@ -44,7 +44,7 @@
       <a href="/">トップページ</a>
     </div>
     <div class="center">
-      <a href="#">コメント管理</a>
+      <a href="/post/admin">コメント管理</a>
     </div>
   </main>
 </body>
